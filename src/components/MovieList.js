@@ -25,7 +25,7 @@ const MovieList = () => {
     };
 
     fetchMovies();
-  }, []);
+  }, [type]);
 
   return (
     <div>
