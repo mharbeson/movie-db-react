@@ -1,12 +1,14 @@
 // import React, { useEffect, useState } from "react";
 import React from "react";
-import MovieList from "../../components/MovieList";
+import MovieCarousel from "../../components/Carousel";
+// import MovieList from "../../components/MovieList";
 import "./Home.css";
 
 const Home = () => {
   return (
     <div>
-      <MovieList />
+      <MovieCarousel />
+      {/* <MovieList /> */}
     </div>
   );
 };

@@ -1,23 +1,37 @@
+import StarRateIcon from "@mui/icons-material/StarRate";
+import "bootstrap/dist/css/bootstrap.min.css";
+import moment from "moment";
 import React from "react";
+import Image from "react-bootstrap/Image";
 import { NavLink } from "react-router-dom";
 import "./MovieCard.css";
 
 const MovieCard = ({ movie }) => {
   return (
-    <div className="movie-card">
-      <NavLink to={`/movie/${movie.id}`}>
-        <img
-          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+    <NavLink
+      to={`/movie/${movie.id}`}
+      style={{ textDecoration: "none", color: "white" }}
+    >
+      <div className="movie-card">
+        <Image
+          // height={300}
           alt={`${movie.title} Poster`}
+          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+          className="movie-image"
         />
-        <div className="movie-details">
-          <h2>{movie.title}</h2>
-          <p>{movie.overview}</p>
-          <p>Release Date: {movie.release_date}</p>
-          <p>Rating: {movie.vote_average}</p>
+        <div className="movie-overlay">
+          <div className="movie-title">{movie ? movie.title : ""}</div>
+          <div className="movie-release">
+            Release:{" "}
+            {movie ? moment(movie.release_date).format("MM-D-YYYY") : ""}
+            <span className="movie-rating">
+              {movie ? movie.vote_average : ""}
+              <StarRateIcon fontSize="small" className="movie-star" />
+            </span>
+          </div>
         </div>
-      </NavLink>
-    </div>
+      </div>
+    </NavLink>
   );
 };
 

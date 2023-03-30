@@ -1,25 +1,14 @@
 .movie-list {
+  padding: 0 4rem 4rem 4rem;
+}
+
+.list-title {
+  font-size: 1.75rem;
+  margin: 2.5rem;
+}
+
+.movie-cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-@media screen and (min-width: 768px) {
-  .movie-list {
-    max-width: 1000px;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .movie-list {
-    max-width: 1200px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .movie-list {
-    max-width: 1400px;
-  }
+  justify-content: space-evenly;
 }

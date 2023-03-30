@@ -1,27 +1,14 @@
-.movie-carousel {
-  margin: 0 auto;
-  max-width: 1200px;
-
-  .slick-slide {
-    padding: 0 5px;
-  }
-
-  img {
-    height: 200px;
-  }
-}
-
-.movie-image {
+.carousel-image {
   height: 600px;
 }
 
-.movie-image > img {
+.carousel-image > img {
   margin: auto;
   display: block;
   width: 100%;
 }
 
-.movie-info {
+.carousel-movie-info {
   position: absolute;
   padding: 5rem;
   bottom: 0px;
@@ -36,27 +23,27 @@
   transition: opacity 0.3s;
 }
 
-.movie-info:hover {
+.carousel-movie-info:hover {
   opacity: 1;
 }
 
-.movie-title {
+.carousel-movie-title {
   font-weight: 900;
   font-size: 4rem;
   margin-bottom: 0.4rem;
   text-align: left;
 }
 
-.movie-release-date {
+.carousel-movie-release-date {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
-.movie-rating {
+.carousel-movie-rating {
   margin-left: 3rem;
 }
 
-.movie-description {
+.carousel-movie-description {
   font-style: italic;
   font-size: 1rem;
   margin-bottom: 0.25rem;

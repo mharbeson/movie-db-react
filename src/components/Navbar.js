@@ -1,49 +1,39 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
-import "./Navbar.css";
+import HomeIcon from "@mui/icons-material/Home";
+import MovieOutlinedIcon from "@mui/icons-material/MovieOutlined";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+// function BasicNav() {
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const handleLinkClick = () => {
-    setIsOpen(false);
-  };
-
+const BasicNav = () => {
   return (
-    <nav className="navbar">
-      <div className="navbar__logo">
-        <a href="/">Logo</a>
-      </div>
-      <div className={`navbar__menu ${isOpen ? "open" : ""}`}>
-        <ul>
-          <li>
-            <NavLink to="/movies/popular" onClick={handleLinkClick}>
+    <Navbar bg="light" expand="lg" sticky="top">
+      <Container>
+        <Navbar.Brand href="/">
+          {/* <HomeIcon color="disabled" /> */}
+          Movie Database
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="/movies/popular">
+              <MovieOutlinedIcon color="disabled" />
               Popular Movies
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/movies/top_rated" onClick={handleLinkClick}>
+            </Nav.Link>
+            <Nav.Link href="/movies/top_rated">
+              <MovieOutlinedIcon color="disabled" />
               Top Rated Movies
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/movies/upcoming" onClick={handleLinkClick}>
+            </Nav.Link>
+            <Nav.Link href="/movies/upcoming">
+              <MovieOutlinedIcon color="disabled" />
               Upcoming Movies
-            </NavLink>
-          </li>
-        </ul>
-      </div>
-      <div className="navbar__hamburger" onClick={toggleMenu}>
-        <div className={`hamburger__line ${isOpen ? "open" : ""}`}></div>
-        <div className={`hamburger__line ${isOpen ? "open" : ""}`}></div>
-        <div className={`hamburger__line ${isOpen ? "open" : ""}`}></div>
-      </div>
-    </nav>
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 
-export default Navbar;
+export default BasicNav;

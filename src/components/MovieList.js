@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import MovieCard from "./MovieCard";
+import "./MovieList.css";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 const API_BASE_URL = "https://api.themoviedb.org";
@@ -28,8 +29,8 @@ const MovieList = () => {
   }, [type]);
 
   return (
-    <div>
-      {/* <h1>{type.toUpperCase()} Movies</h1> */}
+    <div className="movie-list">
+      <h2 className="list-title">{type.toUpperCase}</h2>
       <div className="movie-cards">
         {movies.map((movie) => (
           <MovieCard movie={movie} key={movie.id} />
