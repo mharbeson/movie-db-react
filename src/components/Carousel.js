@@ -38,7 +38,7 @@ const MovieCarousel = () => {
                 </p>
                 <p className="carousel-movie-rating">
                   {movie ? movie.vote_average : ""}
-                  <StarRateIcon />
+                  <StarRateIcon className="carousel-movie-star" />
                 </p>
                 <div>
                   <p className="carousel-movie-description">

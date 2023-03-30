@@ -16,7 +16,7 @@ const BasicNav = () => {
             height="30"
             className="d-inline-block align-top"
           />{" "}
-          Movie Database
+          Movies
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
