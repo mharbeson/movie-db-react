@@ -1,3 +1,6 @@
+import StarRateIcon from "@mui/icons-material/StarRate";
+import "bootstrap/dist/css/bootstrap.min.css";
+import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./Movie.css";
@@ -13,6 +16,7 @@ const MovieDetails = () => {
     fetch(`${API_BASE_URL}/3/movie/${id}?api_key=${API_KEY}`)
       .then((response) => response.json())
       .then((data) => setMovie(data));
+    window.scrollTo(0, 0);
   }, [id]);
 
   if (!movie) {
@@ -24,7 +28,9 @@ const MovieDetails = () => {
       <div
         className="movie-details-header"
         style={{
-          backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`,
+          backgroundImage: `url(https://image.tmdb.org/t/p/original${
+            movie && movie.backdrop_path
+          })`,
         }}
       >
         <h1>{movie.title}</h1>
@@ -32,7 +38,12 @@ const MovieDetails = () => {
       <div className="movie-details-content">
         <p>{movie.overview}</p>
         <p>
-          <strong>Release Date:</strong> {movie.release_date}
+          <strong>Release Year:</strong>{" "}
+          {moment(movie.release_date).format("YYYY")}
+        </p>
+        <p>
+          <strong>Rating:</strong> {movie.vote_average}{" "}
+          <StarRateIcon fontSize="small" className="movie-star" />
         </p>
         <p>
           <strong>Runtime:</strong> {movie.runtime} minutes

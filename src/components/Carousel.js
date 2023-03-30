@@ -36,6 +36,15 @@ const MovieCarousel = () => {
                   className="d-block w-100 carousel-overlay"
                 />
               </div>
+              <div key={movie.id} className="carousel-image-mobile">
+                <img
+                  src={`https://image.tmdb.org/t/p/original${
+                    movie && movie.poster_path
+                  }`}
+                  alt={movie.title}
+                  className="d-block w-100 carousel-overlay"
+                />
+              </div>
               <div className="carousel-movie-info">
                 <h3 className="carousel-movie-title">{movie.title}</h3>
                 <div className="carousel-movie-release-date">
