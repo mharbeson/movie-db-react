@@ -1,5 +1,6 @@
 import StarRateIcon from "@mui/icons-material/StarRate";
 import "bootstrap/dist/css/bootstrap.min.css";
+import moment from "moment";
 import React, { useEffect, useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import { NavLink } from "react-router-dom";
@@ -21,33 +22,35 @@ const MovieCarousel = () => {
     <Carousel fade controls={false} keyboard>
       {movies.map((movie) => (
         <Carousel.Item>
-          <NavLink to={`/movie/${movie.id}`}>
-            <div key={movie.id} className="carousel-image">
-              <img
-                src={`https://image.tmdb.org/t/p/original${
-                  movie && movie.backdrop_path
-                }`}
-                alt={movie.title}
-              />
-            </div>
-            <Carousel.Caption>
+          <div className="">
+            <NavLink
+              to={`/movie/${movie.id}`}
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              <div key={movie.id} className="carousel-image">
+                <img
+                  src={`https://image.tmdb.org/t/p/original${
+                    movie && movie.backdrop_path
+                  }`}
+                  alt={movie.title}
+                  className="d-block w-100 carousel-overlay"
+                />
+              </div>
               <div className="carousel-movie-info">
                 <h3 className="carousel-movie-title">{movie.title}</h3>
-                <p className="carousel-movie-release-date">
-                  {movie ? movie.release_date : ""}
-                </p>
-                <p className="carousel-movie-rating">
-                  {movie ? movie.vote_average : ""}
-                  <StarRateIcon className="carousel-movie-star" />
-                </p>
-                <div>
-                  <p className="carousel-movie-description">
-                    {movie ? movie.overview : ""}
-                  </p>
+                <div className="carousel-movie-release-date">
+                  {movie ? moment(movie.release_date).format("MM-D-YYYY") : ""}
+                  <span className="carousel-movie-rating">
+                    {movie ? movie.vote_average : ""}
+                    <StarRateIcon className="carousel-movie-star" />
+                  </span>
+                </div>
+                <div className="carousel-movie-description">
+                  {movie ? movie.overview : ""}
                 </div>
               </div>
-            </Carousel.Caption>
-          </NavLink>
+            </NavLink>
+          </div>
         </Carousel.Item>
       ))}
     </Carousel>

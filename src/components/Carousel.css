@@ -8,6 +8,10 @@
   width: 100%;
 }
 
+.carousel-overlay {
+  background-image: black;
+}
+
 .carousel-movie-info {
   position: absolute;
   padding: 5rem;
@@ -18,9 +22,9 @@
   width: 100%;
   justify-content: flex-end;
   align-items: flex-start;
-  background-image: linear-gradient(rgb(0, 0, 0, 0), rgb(0, 0, 0, 1));
   opacity: 1;
-  transition: opacity 0.3s;
+  transition: opacity 0.5s;
+  background-image: linear-gradient(rgb(0, 0, 0, 0), rgb(0, 0, 0, 1));
 }
 
 .carousel-movie-info:hover {
@@ -54,4 +58,7 @@
 
 .carousel-movie-star {
   color: #f1c40f;
+}
+
+@media screen and (max-width: 425px) {
 }
