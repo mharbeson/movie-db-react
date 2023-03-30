@@ -1,15 +1,23 @@
-// import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import logo from "./logo.svg";
+import MovieList from "./components/MovieList";
+import Navbar from "./components/Navbar.js";
+import Home from "./pages/home/Home";
+import Movie from "./pages/movie/Movie";
+import ScrollToTop from "./utils/ScrollToTop";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello World</p>
-      </header>
+      <Router>
+        <ScrollToTop />
+        <Navbar />
+        <Routes>
+          <Route index element={<Home />}></Route>
+          <Route path="movie/:id" element={<Movie />}></Route>
+          <Route path="movies/:type" element={<MovieList />}></Route>
+        </Routes>
+      </Router>
     </div>
   );
 }
