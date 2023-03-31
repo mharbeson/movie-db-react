@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# Movie Database Built with React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+This project was built using React and the Movie Database API. It shows the most popular, top rated, and upcoming movies. It features a carousel on the home page that shows the most popular movies and shows various details for selected movies. In the future I want to add a search feature.
 
-In the project directory, you can run:
+The site is hosted on Netlify and can be found [here](https://movies.mharb.tech/).
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Use arrays, objects, sets or maps to store and retrieve information that is displayed in your app.
+- Analyze data that is stored in arrays, objects, sets or maps and display information about it in your app.
+- Develop your project using a common JavaScript framework such as React, Angular, or Vue.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Retrieve data from a third-party API and use it to display something within your app.
 
-### `npm test`
+## How to run this project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Node.js and NPM are required to run this project.
 
-### `npm run build`
+To install the dependencies and start the project, run the following commands:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+npm install
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## API Key
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This application uses the [The Movie Database API](https://developers.themoviedb.org/3/getting-started/introduction). You will need to create an account and request an API key. Once you have the key, create a file called `.env` in the root directory of the project and add the following line, with your API key:
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+REACT_APP_API_KEY=
+```
